@@ -7,37 +7,43 @@
 
 float Solution1::ConvertTemperature(float _value, TemperatureUnits _from, TemperatureUnits _to)
 {
-	double temp = _value;
-	double new_temp = 0;
+	float temp = _value;
+	float new_temp = 0;
 	switch (_from)
 	{
 	case TemperatureUnits::CELSIUS:
 		if (_to == TemperatureUnits::FAHRENHEIT)
 		{
-			new_temp = (9 / 5) * temp+32;
+			new_temp = (9.f / 5.f) * temp+32;
+
 		}
 		if (_to == TemperatureUnits::CELSIUS)
 		{
 			new_temp = temp;
+
 		}
 		if (_to == TemperatureUnits::KELVIN)
 		{
 			new_temp = temp + 273.15f;
+
 
 		}
 		break;
 	case TemperatureUnits::FAHRENHEIT:
 		if (_to == TemperatureUnits::CELSIUS)
 		{
-			new_temp = (5 / 9)* (temp - 32);
+			new_temp = (5.f / 9.f)* (temp - 32);
+
 		}
 		if (_to == TemperatureUnits::FAHRENHEIT)
 			{
 				new_temp = temp;
+
 			}
 		if (_to == TemperatureUnits::KELVIN)
 		{
-			new_temp = (5 / 9) * (temp - 32) + 273.15f;
+			new_temp = (5.f / 9.f) * (temp - 32) + 273.15f;
+
 
 		}
 		break;
@@ -45,21 +51,24 @@ float Solution1::ConvertTemperature(float _value, TemperatureUnits _from, Temper
 		if (_to == TemperatureUnits::CELSIUS)
 		{
 			new_temp = temp - 273.15f;
+
 		}
 		if (_to == TemperatureUnits::KELVIN)
 		{
 			new_temp = temp;
+
 		}
 		if (_to == TemperatureUnits::FAHRENHEIT)
 		{
-			new_temp = (9 / 5) *(temp - 273.15f) + 32;
+			new_temp = (9.f/5.f) *(temp - 273.15f) + 32;
+
 
 		}
 		break;
 	default:
 		break;
 	}
-	new_temp = ceil(new_temp * 100.0) / 100.0;
+	new_temp = round(new_temp * 100.0) / 100.0;
 	std::cout << new_temp;
 
 	return new_temp;
