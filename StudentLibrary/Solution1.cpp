@@ -59,7 +59,7 @@ float Solution1::ConvertTemperature(float _value, TemperatureUnits _from, Temper
 	default:
 		break;
 	}
-	new_temp = floor(new_temp * 100.0) / 100.0;
+	new_temp = ceil(new_temp * 100.0) / 100.0;
 	std::cout << new_temp;
 
 	return new_temp;
