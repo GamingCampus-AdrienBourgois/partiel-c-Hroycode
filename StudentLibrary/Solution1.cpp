@@ -29,7 +29,7 @@ float Solution1::ConvertTemperature(float _value, TemperatureUnits _from, Temper
 	case TemperatureUnits::FAHRENHEIT:
 		if (_to == TemperatureUnits::CELSIUS)
 		{
-			new_temp = 5/9*(temp - 32);
+			new_temp = 5 / 9 * (temp - 32);
 		}
 		if (_to == TemperatureUnits::FAHRENHEIT)
 			{
